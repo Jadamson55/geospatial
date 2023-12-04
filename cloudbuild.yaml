@@ -1,0 +1,8 @@
+steps:
+  - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
+    entrypoint: 'bash'
+    args: ['-c', 'gcloud beta functions deploy geospatial --run-service-account=cloud-functions@adata-solutions.iam.gserviceaccount.com --region=us-central1 --gen2 --set-build-env-vars=TOKEN=$_TOKEN --entry-point main --runtime python310 --memory 1000MB --cpu=1 --timeout 3600s --trigger-http --allow-unauthenticated --source "./src/geospatial/"']
+
+timeout: "6400s"
+options:
+ logging: CLOUD_LOGGING_ONLY

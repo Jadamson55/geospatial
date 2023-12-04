@@ -1,0 +1,28 @@
+version: "2"
+
+services:
+  cloud_functions:
+    container_name: geospatial_1
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    image: geospatial_1
+    working_dir: /usr/app
+    command: /bin/bash
+    restart: always
+    stdin_open: true
+    tty: true
+    ports:
+      - "80:80"
+      - "8080:8080"
+      - "20:20"
+      - "21:21"
+      - "2021:2021"
+      - "60020:60020"
+    volumes:
+      - .:/usr/app
+    environment:
+      PYTHONPATH: /usr/app:/usr/app/vendor
+      PIPENV_VENV_IN_PROJECT: 1
+      DEBUG: 'True'
+      GOOGLE_APPLICATION_CREDENTIALS: '../cloud-key.json'

@@ -1,0 +1,6 @@
+# Function dependencies, for example:
+# package>=version
+google-cloud-bigquery
+google-cloud-secret-manager
+google-cloud-storage
+google-cloud-bigquery[pandas]==2.34.3
