@@ -9,12 +9,12 @@ from google.cloud import secretmanager
 
 def main(request):
     """
-        This function will pull the Amazon Data
+        This function will pull the Data
         file daily from the ftp and upload it to
         cloud storage.
 
         It is triggered to run at 8:00 MDT
-        0 14 * * *
+        0 14 * * * <<< UTC time
     """
 
     # Initialize clients
